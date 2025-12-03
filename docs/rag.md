@@ -12,6 +12,7 @@ Références internes:
 - Architecture détaillée: voir `docs/rag-02-architect-design.md`.
 - UI/UX: voir `docs/rag-03-UI_UX_en-taiwling-css-et-chadcn.md`.
 - Fullstack (HTML/CSS/JS): voir `docs/rag-04-expert-fullstack-html-CSS-et-JS.md`.
+- Installation Backend (Symfony 7): voir `docs/rag-05-installation-backend.md`.
 
 
 ## Introduction

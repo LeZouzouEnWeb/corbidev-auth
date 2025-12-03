@@ -1,0 +1,22 @@
+# === Composer ===
+/vendor/
+/composer.lock
+
+# === Environnements ===
+.env
+.env.*
+!.env.example
+
+# === Cache et logs ===
+/.cache/
+/logs/
+/tmp/
+
+# === IDE / Éditeurs ===
+/.idea/
+/.vscode/
+/nbproject/
+
+# === Systèmes ===
+.DS_Store
+Thumbs.db

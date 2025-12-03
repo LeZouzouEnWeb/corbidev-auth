@@ -1,0 +1,12 @@
+RewriteEngine On
+AddType text/cache-manifest .manifest
+Options -MultiViews
+RewriteBase /
+
+# servir fichiers/dossiers existants
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# sinon, tout vers index.php en query (max compatible)
+RewriteRule ^(.*)$ index.php?path=$1 [QSA,L]

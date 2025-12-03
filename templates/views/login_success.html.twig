@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion en cours · {{ parent() }}{% endblock %}
+
+{% block content %}
+  <section class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <div class="alert alert-success">
+          Connexion réussie. Redirection en cours…
+        </div>
+        <noscript>
+          <div class="alert alert-warning">JavaScript est requis pour finaliser la connexion.</div>
+        </noscript>
+      </div>
+    </div>
+  </section>
+  <script>
+    try {
+      const token = {{ token|json_encode|raw }};
+      const key = {{ cookie_name|default('auth_key')|json_encode|raw }};
+      localStorage.setItem(key, token);
+      // horodatage pour rotation 24h côté client
+      localStorage.setItem(key + '_ts', Date.now().toString());
+    } catch (e) {
+      console.error('Impossible de définir la clé localStorage:', e);
+    }
+    // Redirige après synchro
+    setTimeout(function(){ window.location.assign({{ redirect_to|default('/')|json_encode|raw }}); }, 50);
+  </script>
+{% endblock %}

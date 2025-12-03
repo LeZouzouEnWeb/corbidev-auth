@@ -1,0 +1,19 @@
+{
+  "app_name": "Auth ENV",
+  "title_h1": "Portail d'accès DEV / HOMOL",
+  "env": "DEV",
+  "pages": [
+    {
+      "slug": "/",
+      "label": "Accueil"
+    },
+    {
+      "slug": "/login",
+      "label": "Connexion"
+    },
+    {
+      "slug": "/docs",
+      "label": "Docs"
+    }
+  ]
+}

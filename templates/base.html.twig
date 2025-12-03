@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr" data-bs-theme="dark">
+  <head>
+    {% include 'partials/_head.html.twig' %}
+    <title>{% block title %}{{ app_name|default('Auth ENV') }}{% endblock %}</title>
+  </head>
+  <body>
+    <header class="py-4 text-center">
+      {% include 'partials/_header.html.twig' %}
+    </header>
+
+    {% include 'partials/_nav.html.twig' %}
+
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+
+    {% include 'partials/_footer.html.twig' %}
+
+    {# Sync localStorage with server token when available #}
+    {% if auth_token is defined and auth_token %}
+    <script>
+      (function(){
+        try {
+          var key = {{ cookie_name|default('auth_key')|json_encode|raw }};
+          var token = {{ auth_token|json_encode|raw }};
+          if (token) { localStorage.setItem(key, token); }
+        } catch(_){}
+      })();
+    </script>
+    {% endif %}
+  </body>
+</html>

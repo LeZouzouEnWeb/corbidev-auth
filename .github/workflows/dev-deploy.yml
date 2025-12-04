@@ -9,8 +9,7 @@ on:
     types: [ closed ]
 
 permissions:
-  contents: write  # nécessaire pour le miroir git
-  pull-requests: write
+  contents: read
 
 concurrency:
   group: dev-deploy-${{ github.event.pull_request.head.ref }}
@@ -19,10 +18,9 @@ concurrency:
 jobs:
   deploy-dev:
     name: 🚀 Déploiement DEV
-    uses: LeZouzouEnWeb/workflows/.github/workflows/dev-deploy.yml@V1.0.4
+    uses: LeZouzouEnWeb/workflows/.github/workflows/deploy.yml@V1.0.5
     permissions:
-        contents: write  # nécessaire pour le miroir git
-        pull-requests: write
+      contents: read
     secrets:
       # Secrets requis pour le déploiement SSH
       REMOTE_CHEMIN: ${{ secrets.REMOTE_CHEMIN }}        # Chemin de base sur le serveur
@@ -33,5 +31,6 @@ jobs:
       # Variables pour construire le chemin distant
       ADRESSE_GLOBAL: ${{ vars.ADRESSE_GLOBAL }}         # Ex: www
       ADRESSE_LOCAL: ${{ vars.ADRESSE_LOCAL }}           # Ex: mon-site
-      remote_env: dev
-      PATH_ORDER: local-env
+      remote_env: 'dev'
+      PATH_ORDER: 'local-env'
+      enable_mirror: false

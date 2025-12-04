@@ -19,18 +19,15 @@ jobs:
       contents: write
       pull-requests: write
     secrets:
-      SFTP_HOST: ${{ secrets.SFTP_HOST }}
-      SFTP_USER: ${{ secrets.SFTP_USER }}
-      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      REMOTE_CHEMIN: ${{ secrets.REMOTE_CHEMIN }}
-      ADD_TO_PROJECT_PAT: ${{ secrets.ADD_TO_PROJECT_PAT }}
+      # Secrets requis pour le déploiement SSH
+      REMOTE_CHEMIN: ${{ secrets.REMOTE_CHEMIN }}        # Chemin de base sur le serveur
+      SFTP_HOST: ${{ secrets.SFTP_HOST }}                # Adresse du serveur
+      SFTP_USER: ${{ secrets.SFTP_USER }}                # Utilisateur SSH
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}    # Clé privée SSH
     with:
-      remote_env: prod
-      ADRESSE_GLOBAL: ${{ vars.ADRESSE_GLOBAL }}
-      ADRESSE_LOCAL: ${{ vars.ADRESSE_LOCAL }}
-      SFTP_PORT: '22'
+      # Variables pour construire le chemin distant
+      ADRESSE_GLOBAL: ${{ vars.ADRESSE_GLOBAL }}         # Ex: www
+      ADRESSE_LOCAL: ${{ vars.ADRESSE_LOCAL }}           # Ex: mon-site
+      remote_env: 'dev'
       PATH_ORDER: 'local-env'
-      # Active le miroir: synchronise main avec homol
-      enable_mirror: ${{ github.event.pull_request.base.ref == 'main' && github.event.pull_request.head.ref == 'homol' }}
-      mirror_source: homol
-      mirror_target: main
+      enable_mirror: false

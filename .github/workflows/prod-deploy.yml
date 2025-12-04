@@ -10,7 +10,7 @@ on:
 
 permissions:
   contents: write  # nécessaire pour le miroir git
-
+  pull-requests: write
 concurrency:
   group: prod-deploy-${{ github.event.pull_request.head.ref }}
   cancel-in-progress: true
@@ -21,6 +21,7 @@ jobs:
     uses: LeZouzouEnWeb/workflows/.github/workflows/prod-deploy.yml@V1.0.4
     permissions:
       contents: write
+      pull-requests: write
     secrets:
       REMOTE_CHEMIN: ${{ secrets.REMOTE_CHEMIN }}
       SFTP_HOST: ${{ secrets.SFTP_HOST }}

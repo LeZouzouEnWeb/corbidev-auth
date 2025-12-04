@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write  # nécessaire pour le miroir git
+  pull-requests: write
 
 concurrency:
   group: homol-deploy-${{ github.event.pull_request.head.ref }}
@@ -21,13 +22,16 @@ jobs:
     uses: LeZouzouEnWeb/workflows/.github/workflows/homol-deploy.yml@V1.0.4
     permissions:
       contents: write
+      pull-requests: write
     secrets:
-      REMOTE_CHEMIN: ${{ secrets.REMOTE_CHEMIN }}
-      SFTP_HOST: ${{ secrets.SFTP_HOST }}
-      SFTP_USER: ${{ secrets.SFTP_USER }}
-      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+     # Secrets requis pour le déploiement SSH
+      REMOTE_CHEMIN: ${{ secrets.REMOTE_CHEMIN }}        # Chemin de base sur le serveur
+      SFTP_HOST: ${{ secrets.SFTP_HOST }}                # Adresse du serveur
+      SFTP_USER: ${{ secrets.SFTP_USER }}                # Utilisateur SSH
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}    # Clé privée SSH
     with:
-      ADRESSE_GLOBAL: ${{ vars.ADRESSE_GLOBAL }}
-      ADRESSE_LOCAL: ${{ vars.ADRESSE_LOCAL }}
+      # Variables pour construire le chemin distant
+      ADRESSE_GLOBAL: ${{ vars.ADRESSE_GLOBAL }}         # Ex: www
+      ADRESSE_LOCAL: ${{ vars.ADRESSE_LOCAL }}           # Ex: mon-site
       remote_env: homol
       PATH_ORDER: local-env

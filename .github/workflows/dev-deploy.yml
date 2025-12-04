@@ -9,7 +9,8 @@ on:
     types: [ closed ]
 
 permissions:
-  contents: read
+  contents: write
+  pull-requests: write
 
 concurrency:
   group: dev-deploy-${{ github.event.pull_request.head.ref }}
@@ -18,9 +19,11 @@ concurrency:
 jobs:
   deploy-dev:
     name: 🚀 Déploiement DEV
-    uses: LeZouzouEnWeb/workflows/.github/workflows/dev-deploy.yml@V1.0.4
+    if: github.event.pull_request.merged == true
+    uses: LeZouzouEnWeb/workflows/.github/workflows/deploy.yml@V1.0.5
     permissions:
-      contents: read
+      contents: write
+      pull-requests: write
     secrets:
       # Secrets requis pour le déploiement SSH
       REMOTE_CHEMIN: ${{ secrets.REMOTE_CHEMIN }}        # Chemin de base sur le serveur
@@ -31,5 +34,6 @@ jobs:
       # Variables pour construire le chemin distant
       ADRESSE_GLOBAL: ${{ vars.ADRESSE_GLOBAL }}         # Ex: www
       ADRESSE_LOCAL: ${{ vars.ADRESSE_LOCAL }}           # Ex: mon-site
-      remote_env: dev
-      PATH_ORDER: local-env
+      remote_env: 'dev'
+      PATH_ORDER: 'local-env'
+      enable_mirror: false

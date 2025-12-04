@@ -5,6 +5,7 @@ name: 🗑 Supprimer la branche après fusion
 
 on:
   pull_request:
+    branches: [ develop ]
     types: [closed]
 
 permissions:
@@ -13,12 +14,12 @@ permissions:
 
 env:
   # Liste des branches à ne JAMAIS supprimer automatiquement (séparées par des virgules)
-  FORBIDDEN_BRANCHES: develop,homol
+  FORBIDDEN_BRANCHES: develop,homol,main
 
 jobs:
   delete-branch:
     name: 🗑 Supprimer la branche après fusion
-    uses: LeZouzouEnWeb/workflows/.github/workflows/delete-branch-after-merge.yml@V1.0.4
+    uses: LeZouzouEnWeb/workflows/.github/workflows/delete-branch-after-merge.yml@V1.0.5
     permissions:
       contents: write
       pull-requests: write

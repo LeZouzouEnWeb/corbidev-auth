@@ -28,6 +28,6 @@ jobs:
       # Variables pour construire le chemin distant
       ADRESSE_GLOBAL: ${{ vars.ADRESSE_GLOBAL }}         # Ex: www
       ADRESSE_LOCAL: ${{ vars.ADRESSE_LOCAL }}           # Ex: mon-site
-      remote_env: 'dev'
+      remote_env: 'prod'
       PATH_ORDER: 'local-env'
       enable_mirror: false

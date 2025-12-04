@@ -33,7 +33,7 @@ Projet d'authentification centralisée pour domaine et sous-domaines (SSO), bas�
 - [x] Choisir IdP (Keycloak) et flux OIDC (Authorization Code + PKCE)
 - [x] Créer `.env.example` et `.env.local` avec variables OIDC
 - [x] Créer `compose.yml` (MariaDB + Adminer)
-- [ ] Lancer Docker Compose et vérifier Adminer accessible ([localhost:8080](http://localhost:8080))
+- [x] Lancer Docker Compose et vérifier Adminer accessible ([localhost:8080](http://localhost:8080))
 - [ ] Installer Symfony 7 (`composer create-project symfony/skeleton:"7.0.*" ./`)
 - [ ] Installer webapp pack (`composer require webapp`)
 - [ ] Configurer `.env.local` avec DATABASE_URL locale

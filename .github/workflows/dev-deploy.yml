@@ -9,7 +9,8 @@ on:
     types: [ closed ]
 
 permissions:
-  contents: read
+  contents: write  # nécessaire pour le miroir git
+  pull-requests: write
 
 concurrency:
   group: dev-deploy-${{ github.event.pull_request.head.ref }}
@@ -20,7 +21,8 @@ jobs:
     name: 🚀 Déploiement DEV
     uses: LeZouzouEnWeb/workflows/.github/workflows/dev-deploy.yml@V1.0.4
     permissions:
-      contents: read
+        contents: write  # nécessaire pour le miroir git
+        pull-requests: write
     secrets:
       # Secrets requis pour le déploiement SSH
       REMOTE_CHEMIN: ${{ secrets.REMOTE_CHEMIN }}        # Chemin de base sur le serveur

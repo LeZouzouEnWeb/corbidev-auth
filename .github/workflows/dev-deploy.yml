@@ -9,7 +9,8 @@ on:
     types: [ closed ]
 
 permissions:
-  contents: read
+  contents: write
+  pull-requests: write
 
 concurrency:
   group: dev-deploy-${{ github.event.pull_request.head.ref }}
@@ -18,9 +19,11 @@ concurrency:
 jobs:
   deploy-dev:
     name: 🚀 Déploiement DEV
+    if: github.event.pull_request.merged == true
     uses: LeZouzouEnWeb/workflows/.github/workflows/deploy.yml@V1.0.5
     permissions:
-      contents: read
+      contents: write
+      pull-requests: write
     secrets:
       # Secrets requis pour le déploiement SSH
       REMOTE_CHEMIN: ${{ secrets.REMOTE_CHEMIN }}        # Chemin de base sur le serveur

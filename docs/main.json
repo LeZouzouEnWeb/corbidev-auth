@@ -1,0 +1,122 @@
+{
+    "id": 10728178,
+    "name": "main",
+    "target": "branch",
+    "source_type": "Repository",
+    "source": "LeZouzouEnWeb/corbidev-auth",
+    "enforcement": "active",
+    "conditions": {
+        "ref_name": {
+            "exclude": [],
+            "include": [
+                "refs/heads/main"
+            ]
+        }
+    },
+    "rules": [
+        {
+            "type": "deletion"
+        },
+        {
+            "type": "non_fast_forward"
+        },
+        {
+            "type": "required_linear_history"
+        },
+        {
+            "type": "pull_request",
+            "parameters": {
+                "required_approving_review_count": 2,
+                "dismiss_stale_reviews_on_push": false,
+                "required_reviewers": [],
+                "require_code_owner_review": false,
+                "require_last_push_approval": false,
+                "required_review_thread_resolution": true,
+                "automatic_copilot_code_review_enabled": false,
+                "allowed_merge_methods": [
+                    "merge",
+                    "squash",
+                    "rebase"
+                ]
+            }
+        },
+        {
+            "type": "required_status_checks",
+            "parameters": {
+                "strict_required_status_checks_policy": true,
+                "do_not_enforce_on_create": false,
+                "required_status_checks": [
+                    {
+                        "context": "🔣 Analyse CodeQL / 🔣 Analyse CodeQL",
+                        "integration_id": 15368
+                    },
+                    {
+                        "context": "🔄 Mettre a jour le titre depuis la branche / 🔄 Mettre a jour le titre depuis la branche",
+                        "integration_id": 15368
+                    },
+                    {
+                        "context": "🔗 Lier le projet a la PR / 🔗 Lier le projet a la PR",
+                        "integration_id": 15368
+                    },
+                    {
+                        "context": "🔗 Lier les tickets a la PR / 🔗 Lier les tickets a la PR",
+                        "integration_id": 15368
+                    },
+                    {
+                        "context": "🔳 Vérification serveur PROD / 🔳 Vérification serveur PROD",
+                        "integration_id": 15368
+                    },
+                    {
+                        "context": "🔒 Vérification PR homol → main / 🔒 Vérification PR homol → main",
+                        "integration_id": 15368
+                    }
+                ]
+            }
+        },
+        {
+            "type": "code_scanning",
+            "parameters": {
+                "code_scanning_tools": [
+                    {
+                        "tool": "CodeQL",
+                        "security_alerts_threshold": "high_or_higher",
+                        "alerts_threshold": "errors"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "code_quality",
+            "parameters": {
+                "severity": "errors"
+            }
+        }
+    ],
+    "bypass_actors": [
+        {
+            "actor_id": null,
+            "actor_type": "DeployKey",
+            "bypass_mode": "always"
+        },
+        {
+            "actor_id": 2,
+            "actor_type": "RepositoryRole",
+            "bypass_mode": "always"
+        },
+        {
+            "actor_id": 4,
+            "actor_type": "RepositoryRole",
+            "bypass_mode": "always"
+        },
+        {
+            "actor_id": 5,
+            "actor_type": "RepositoryRole",
+            "bypass_mode": "always"
+        },
+        {
+            "actor_id": 1143301,
+            "actor_type": "Integration",
+            "bypass_mode": "always"
+        }
+    ]
+}

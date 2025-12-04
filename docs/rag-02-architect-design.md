@@ -8,7 +8,7 @@
 
 ## Domaines & Certificats
 
-- Wildcard prod: `*.corbisier.fr` (Let’s Encrypt/DNS-01 ou cert géré).
+- Wildcard prod: `*.corbisier.fr` (Let's Encrypt/DNS-01 ou cert géré).
 - Environnements: `dev-*.corbisier.fr`, `homol-*.corbisier.fr`.
 - Cookies: `Domain=.corbisier.fr` (prod), `.dev-corbisier.fr` (dev), `.homol-corbisier.fr` (homol); `Secure`, `HttpOnly`, `SameSite=None`.
 
@@ -37,12 +37,12 @@
 ## Pages & Parcours
 
 - Pages prioritaires: login, registration, email verification, forgot/reset, profil.
-- Consentement: accepter CGU/Privacy à l’inscription (journalisation: version + timestamp).
+- Consentement: accepter CGU/Privacy à l'inscription (journalisation: version + timestamp).
 
 ## Observabilité
 
 - Journaux: audit (register, login, logout, consent, reset, 2FA setup).
-- Métriques/alertes: pics d’échecs, IP suspectes, anomalies géo-IP.
+- Métriques/alertes: pics d'échecs, IP suspectes, anomalies géo-IP.
 
 # Base de connaissance — Expert Architecture & Design
 
@@ -116,8 +116,8 @@ Ce document sert de base de connaissance pour un système RAG / chatbot / assist
 
 ## 🧠 Comment cette base s'intègre dans un système RAG
 
-- On structure l'information en **chunks** (sections, sous-sections) — ce qui facilite l'indexation et la récupération. :contentReference[oaicite:0]{index=0}*
-- Lorsqu'un utilisateur — client, collègue, stagiaire — pose une question, le système RAG peut récupérer les passages les plus pertinents (ex. "phase du projet", "choix matériaux durables", "normes", "modularité") puis les utiliser comme contexte pour que le modèle de langage génère une réponse informée. :contentReference[oaicite:1]{index=1}*
-- Cette approche évite les hallucinations : le chatbot s'appuie sur des données factuelles, spécifiques à votre expertise/organisation, plutôt que sur des généralités. :contentReference[oaicite:2]{index=2}*
+- On structure l'information en **chunks** (sections, sous-sections) — ce qui facilite l'indexation et la récupération. :contentReference[oaicite:0]{index=0}\*
+- Lorsqu'un utilisateur — client, collègue, stagiaire — pose une question, le système RAG peut récupérer les passages les plus pertinents (ex. "phase du projet", "choix matériaux durables", "normes", "modularité") puis les utiliser comme contexte pour que le modèle de langage génère une réponse informée. :contentReference[oaicite:1]{index=1}\*
+- Cette approche évite les hallucinations : le chatbot s'appuie sur des données factuelles, spécifiques à votre expertise/organisation, plutôt que sur des généralités. :contentReference[oaicite:2]{index=2}\*
 
 \* Les références [oaicite:n] sont des exemples fictifs pour illustrer l'intégration dans un système RAG.

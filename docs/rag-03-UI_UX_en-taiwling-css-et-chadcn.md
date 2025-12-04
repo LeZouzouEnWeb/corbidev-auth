@@ -10,8 +10,8 @@
 - AssetMapper (Symfony 7): recommandé pour CSS/JS simples; import Tailwind.
 - Sass: `symfonycasts/sass-bundle` pour SCSS; limité aux overrides globaux.
 - Éviter Chakra UI (orienté React). Alternatives Tailwind:
-     - Flowbite (composants UI + JS)
-     - daisyUI (plugin Tailwind pour thèmes/primitives)
+  - Flowbite (composants UI + JS)
+  - daisyUI (plugin Tailwind pour thèmes/primitives)
 
 ## Pages & Composants
 

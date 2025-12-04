@@ -2,7 +2,7 @@
 
 ## Objectif
 
-- Définir une base front “sobre et efficace” pour les pages auth: Login, Registration, Email Verification, Forgot/Reset, Profil.
+- Définir une base front "sobre et efficace" pour les pages auth: Login, Registration, Email Verification, Forgot/Reset, Profil.
 
 ## Stack front
 
@@ -13,25 +13,25 @@
 ## Pages & structures
 
 - Layout minimal commun (header, footer, container centré, largeur max).
-- Formulaires: inputs accessibles, messages d’erreur clairs, boutons primaires/secondaires.
+- Formulaires: inputs accessibles, messages d'erreur clairs, boutons primaires/secondaires.
 - Composants: Alert/Toast, Spinner, Modal (via Flowbite ou scripts légers).
 
 ## Bonnes pratiques
 
-- Accessibilité: labels, aria-*, focus states, contrastes; navigation clavier.
+- Accessibilité: labels, aria-\*, focus states, contrastes; navigation clavier.
 - Sécurité front: pas de stockage de tokens en localStorage; cookies `Secure`/`HttpOnly` gérés côté serveur; éviter inline JS.
 - Performance: Tailwind optimisé, minification via AssetMapper, assets versionnés; éviter images lourdes.
 
 ## Intégration OIDC
 
 - Redirections/login via Keycloak; gérer les retours (code, state) côté serveur Symfony.
-- Pages front: afficher états (chargement, succès/erreur), liens “Se connecter”/“Se déconnecter”.
+- Pages front: afficher états (chargement, succès/erreur), liens "Se connecter"/"Se déconnecter".
 
 ## Checklist livraison
 
 - Pages: login, registration, email verification, forgot/reset, profil.
-- CGU/Privacy: affichage et consentement à l’inscription (journalisation).
-- Accessibilité: tests focus/lecteur d’écran de base.
+- CGU/Privacy: affichage et consentement à l'inscription (journalisation).
+- Accessibilité: tests focus/lecteur d'écran de base.
 - Responsiveness: mobile-first, breakpoints Tailwind.
 
 # Base de connaissance — Expert Full‑Stack HTML / CSS / JavaScript

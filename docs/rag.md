@@ -9,11 +9,11 @@
 - Frontend: Tailwind CSS via AssetMapper + SCSS pour overrides; éviter Chakra (React), préférer Flowbite/daisyUI.
 
 Références internes:
+
 - Architecture détaillée: voir `docs/rag-02-architect-design.md`.
 - UI/UX: voir `docs/rag-03-UI_UX_en-taiwling-css-et-chadcn.md`.
 - Fullstack (HTML/CSS/JS): voir `docs/rag-04-expert-fullstack-html-CSS-et-JS.md`.
 - Installation Backend (Symfony 7): voir `docs/rag-05-installation-backend.md`.
-
 
 ## Introduction
 
@@ -136,9 +136,9 @@ Références internes:
 
 ## Configuration
 
-- Fichier d’exemple: voir `/.env.example` et créer vos secrets dans `/.env.local` (non commités).
+- Fichier d'exemple: voir `/.env.example` et créer vos secrets dans `/.env.local` (non commités).
 - Variables OIDC (Keycloak):
-  - `OIDC_ISSUER`: base URL de l’issuer (realm), ex: `https://auth.dev-corbisier.fr/realms/<realm>`
+  - `OIDC_ISSUER`: base URL de l'issuer (realm), ex: `https://auth.dev-corbisier.fr/realms/<realm>`
   - `AUTHORIZATION_ENDPOINT`: ex: `.../protocol/openid-connect/auth`
   - `TOKEN_ENDPOINT`: ex: `.../protocol/openid-connect/token`
   - `JWKS_URI`: ex: `.../protocol/openid-connect/certs`

@@ -3,3 +3,4 @@
 .rsync-ignore
 .vscode
 vendor
+docs

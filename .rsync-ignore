@@ -8,9 +8,10 @@ docs
 symfony/.env
 symfony/.env.*
 symfony/config/secrets/prod/prod.decrypt.private.php
-symfony/public/bundles/
+###> symfony/public/bundles/ ###
 symfony/var/
 symfony/vendor/
+symfony/node_modules/
 
 symfony/phpunit.xml
 symfony/.phpunit.cache/

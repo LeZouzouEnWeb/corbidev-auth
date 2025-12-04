@@ -28,7 +28,7 @@ jobs:
       ADRESSE_GLOBAL: ${{ vars.ADRESSE_GLOBAL }}
       ADRESSE_LOCAL: ${{ vars.ADRESSE_LOCAL }}
       SFTP_PORT: '22'
-      PATH_ORDER: 'env-local'
+      PATH_ORDER: 'local-env'
       # Active le miroir: synchronise main avec homol
       enable_mirror: ${{ github.event.pull_request.base.ref == 'main' && github.event.pull_request.head.ref == 'homol' }}
       mirror_source: homol

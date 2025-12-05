@@ -1,22 +1,67 @@
-# === Composer ===
+# ============================
+# Composer (racine)
+# ============================
 /vendor/
 /composer.lock
 
-# === Environnements ===
+# ============================
+# Environnements
+# ============================
 .env
 .env.*
 !.env.example
 
-# === Cache et logs ===
+# ============================
+# Cache & logs (racine)
+# ============================
 /.cache/
 /logs/
 /tmp/
 
-# === IDE / Éditeurs ===
-/.idea/
-/.vscode/
-/nbproject/
+# ============================
+# IDE / Éditeurs (global)
+# ============================
+.idea/
+.vscode/
+nbproject/
+*.iml
 
-# === Systèmes ===
+# ============================
+# Systèmes
+# ============================
 .DS_Store
 Thumbs.db
+*~
+
+# ============================
+# Symfony (situé dans /symfony)
+# ============================
+symfony/var/
+symfony/var/cache/
+symfony/var/log/
+symfony/vendor/
+
+# Env Symfony
+symfony/.env.local
+symfony/.env.local.php
+symfony/.phpunit.result.cache
+symfony/.php-cs-fixer.cache
+
+# ============================
+# Node / Webpack Encore
+# ============================
+symfony/node_modules/
+symfony/npm-debug.log
+symfony/yarn-debug.log
+symfony/yarn-error.log
+
+# Build Webpack Encore
+symfony/public/build/
+
+# ============================
+# Tailwind / PostCSS / Turbo
+# ============================
+symfony/.tailwindcache
+symfony/.postcss-cache
+symfony/.turbo
+symfony/tailwind.config.js.backup

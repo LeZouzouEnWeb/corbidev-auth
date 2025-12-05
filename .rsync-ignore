@@ -1,25 +1,80 @@
+# ============================
+# Git
+# ============================
 .git
 .gitignore
 .github
+
+# ============================
+# Rsync config
+# ============================
 .rsync-ignore
-.vscode
-vendor
-docs
 
-symfony/.env
-symfony/.env.*
-symfony/config/secrets/prod/prod.decrypt.private.php
-###> symfony/public/bundles/ ###
-symfony/var/
-symfony/vendor/
-symfony/node_modules/
+# ============================
+# IDE / Éditeurs
+# ============================
+.idea/
+.vscode/
+*.iml
 
-symfony/phpunit.xml
-symfony/.phpunit.cache/
-###< phpunit/phpunit ###
+# ============================
+# OS / Système
+# ============================
+.DS_Store
+Thumbs.db
 
-###> symfony/asset-mapper ###
-###> symfony/public/assets/###
-symfony/assets/vendor/
+# ============================
+# Racine
+# ============================
+vendor/
+docs/
 compose.yaml
 docker-compose.override.yaml
+
+# ============================
+# Symfony – Secrets / Env
+# ============================
+symfony/.env
+symfony/.env.local
+symfony/.env.*.local
+symfony/.env.*
+symfony/config/secrets/prod/prod.decrypt.private.php
+
+# ============================
+# Symfony – Cache / Logs / Tests
+# ============================
+symfony/var/
+symfony/var/cache/
+symfony/var/log/
+symfony/tests/
+
+# ============================
+# Symfony – Build / Node / Assets
+# ============================
+symfony/node_modules/
+symfony/vendor/
+symfony/assets/
+symfony/assets/vendor/
+symfony/public/bundles/
+symfony/public/assets/
+symfony/.phpunit.cache/
+
+# ============================
+# Symfony – Fichiers de build
+# ============================
+symfony/webpack.config.js
+symfony/package.json
+symfony/package-lock.json
+symfony/tailwind.config.js
+symfony/postcss.config.js
+
+# ============================
+# Symfony – Docker
+# ============================
+symfony/docker/
+
+# ============================
+# PHPUnit
+# ============================
+symfony/phpunit.xml
+symfony/.phpunit.cache/

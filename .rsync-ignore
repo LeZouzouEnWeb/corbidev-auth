@@ -37,7 +37,6 @@ docker-compose.override.yaml
 symfony/.env
 symfony/.env.local
 symfony/.env.*.local
-symfony/.env.*
 symfony/config/secrets/prod/prod.decrypt.private.php
 
 # ============================
